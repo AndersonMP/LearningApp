@@ -1,31 +1,11 @@
 <div class="container my-2">
     <div class="card shadow-sm">
         <div class="card-body">
-            <h2 class="card-title">{{course.name}}</h2>
-            <ul class="list-group mb-3">
-                <li class="list-group-item">No. {{course.id}}</li>
-            </ul>
+            <course-view [course]="course"></course-view>
             <div>
                 <h3>Estudiantes</h3>
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered">
-                        <thead class="table-dark">
-                            <tr>
-                                <th>Identificación</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @for (item of course.students; track $index) {
-                                <tr>
-                                    <td>{{item.identification}}</td>
-                                    <td>{{item.name}}</td>
-                                    <td>{{item.surname}}</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
+                    <student-detail [students]="course.students"></student-detail>
                 </div>
             </div>
         </div>
